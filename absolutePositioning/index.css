@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,500');
+
+*, *::before, *::after {
+    margin: 0;  
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+	display: grid;
+	place-items: center;
+	height: 100vh;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+	line-height: 1.6;
+}
+
+.card {
+	position: relative;
+	width: 40%;
+	box-shadow: 0 0 25px rgba(0 0 0 / 0.35);
+}
+
+.card::before,
+.card::after {
+	content: '';
+	position: absolute;
+	border: 1px solid white;
+}
+
+.card::before {
+	inset: 1.5rem 1.5rem 1.5rem auto;
+}
+
+.card::after {
+	inset: auto 1.5rem 1.5rem 1.5rem;
+}
+
+.card__img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: -1;
+}
+
+.card__content {
+	background: rgba(0, 0, 0, 0.5);
+	padding: 3rem;
+	color: white;
+}
+
+.card__title,
+.card__text {
+	margin: 0;
+}
+
+.card__title {
+	position: relative;
+	margin-block-end: 0.5em;
+	font-size: 3rem;
+	color: black;
+	line-height: 1;
+	z-index: 1;
+}
+
+.card__title::before,
+.card__title::after {
+	content: '';
+	position: absolute;
+	background: yellow;
+}
+
+.card__title::before {
+	inset: -0.1em auto -0.15em -5rem;
+	width: calc(100% + 5rem);
+	box-shadow: inset -15px 0 10px -10px rgba(0 0 0 / 0.5);
+	z-index: -1;
+}
+
+.card__title::after {
+	inset: -0.1em auto -0.15em calc(100% + 3rem);
+	width: 3rem;
+	box-shadow: inset 12px 0 10px -10px rgba(0 0 0 / 0.5);
+}
+
+.card__text {
+	text-align: right;
+}
