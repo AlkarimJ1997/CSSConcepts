@@ -1,0 +1,53 @@
+body {
+	display: grid;
+	place-items: center;
+	min-height: 100vh;
+}
+
+.custom-select {
+	position: relative;
+}
+
+select {
+	background-color: #4d5061;
+	padding: 1em 5em 1em 1.5em;
+	font-size: 1.5rem;
+	color: white;
+	border: 0;
+	box-shadow: 0 10px 25px rgba(0 0 0 / 0.25);
+}
+
+.custom-arrow {
+	display: block;
+	position: absolute;
+	inset: 0 0 auto auto;
+	width: 4em;
+	height: 100%;
+	background-color: #3b3c47;
+	pointer-events: none;
+}
+
+.custom-arrow::before,
+.custom-arrow::after {
+	--size: 0.65em;
+	--arrow-color: rgba(255 255 255 / 0.5);
+
+	content: '';
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.custom-arrow::before {
+	top: 40%;
+	border-bottom: var(--size) solid var(--arrow-color);
+	border-left: var(--size) solid transparent;
+	border-right: var(--size) solid transparent;
+}
+
+.custom-arrow::after {
+    top: 60%;
+	border-top: var(--size) solid var(--arrow-color);
+	border-left: var(--size) solid transparent;
+	border-right: var(--size) solid transparent;
+}
