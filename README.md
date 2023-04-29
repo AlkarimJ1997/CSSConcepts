@@ -102,6 +102,7 @@ It's important to note that the concepts covered are somewhat non-trivial. Conce
     - [Breaking out of Containers](#breaking-out-of-containers)
     - [Clamping Text](#clamping-text)
     - [Responsive Tables](#responsive-tables)
+    - [Typewriter Effect](#typewriter-effect)
 
 ## Modern CSS Techniques
 
@@ -2487,3 +2488,139 @@ Notice the following role specifications:
 -   `role="cell"` on the `td` elements
 
 We now have a fully accessible table that is responsive.
+
+### Typewriter Effect
+
+To create a typewritter effect, we can utilize keyframes and animation.
+
+Consider the following html:
+
+```html
+<h1>Hello, my name is Alkarim.</h1>
+<p class="subtitle">Welcome to my website!</p>
+```
+
+Before doing anything, it's important to set the `font-family` to a monospace font. This will ensure that the letters are all the same width. It cannot be done otherwise.
+
+Also, make sure you set the following CSS on your text element, since it will likely be a block-level element.
+
+```css
+h1 {
+	width: max-content;
+}
+```
+
+This way, our animation will stop when the text is done, rather than continue the entire width of the page.
+
+From there, we can utilize `::before` and `::after` pseudo elements to hide the text initially.
+
+```css
+h1::before,
+h1::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+}
+
+h1::before {
+	background-color: var(--bg-color);
+}
+```
+
+It's important to note that the `::before` pseudo element must have the same background color as the element itself to hide the text.
+
+From there, we can create the `@keyframes` for the animation. Notice that we can omit the `from` since it is the same as the initial state.
+
+```css
+@keyframes typewriter {
+	to {
+		left: 100%;
+	}
+}
+```
+
+Now, we just need to apply the animation to the `::before` pseudo element. But before doing so, let's add some CSS custom properties to `:root` to add flexibility.
+
+```css
+:root {
+	--speed: 4s;
+	--characters: 26;
+}
+```
+
+The `--characters` property is the number of characters in the text, including whitespace and punctuation. This is important for the `steps()` function.
+
+However, we can add very simple JavaScript to calculate this for us.
+
+```js
+const root = document.documentElement;
+const heading = document.querySelector('h1');
+
+const setCharacters = () => {
+	const characters = heading.textContent.split('');
+
+	root.style.setProperty('--characters', characters.length);
+};
+
+setCharacters();
+```
+
+Now, we can apply the animation to the `::before` pseudo element.
+
+```css
+h1::before {
+	background-color: var(--bg-color);
+	animation: typewriter var(--speed) steps(var(--characters)) forwards;
+}
+```
+
+Notice the use of `forwards` to keep the text visible after the animation is done.
+
+This is pretty much it. However, we can go a step further and add a blinking cursor.
+
+```css
+h1::after {
+	width: 0.125em;
+	background-color: black;
+	animation: typewriter var(--speed) steps(var(--characters)) forwards;
+}
+```
+
+Notice that we are using the same animation as the `::before` pseudo element. This is because we want the cursor to be in sync with the text.
+
+However, we can go even further and add a blinking effect to the cursor. Add the following `@keyframes` to your CSS, as well as a custom property for the speed of the blinking.
+
+```css
+:root {
+	--speed: 4s;
+	--characters: 26;
+    --blinkSpeed: 750ms;
+}
+
+@keyframes blink {
+	to {
+		background-color: transparent;
+	}
+}
+```
+
+Then, change the animation on the `::after` pseudo element to the following.
+
+Also, add a small 1s delay to the `::before` and `::after` typewriter animations so that the blinking cursor blinks before the text begins to reveal.
+
+```css
+h1::before {
+	background-color: var(--bg-color);
+	animation: typewriter var(--speed) steps(var(--characters)) 1s forwards;
+}
+
+h1::after {
+	width: 0.125em;
+	background-color: black;
+	animation: typewriter var(--typewriterSpeed)
+			steps(var(--typewriterCharacters)) 1s forwards,
+		blink var(--blinkSpeed) steps(var(--typewriterCharacters)) infinite;
+}
+```
+
+And that's it! We now have a typewriter effect with a blinking cursor.
