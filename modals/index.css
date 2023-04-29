@@ -8,53 +8,110 @@
 }
 
 body {
-	min-height: 100vh;
-	margin: 2rem;
-	font-family: system-ui;
-	font-size: 1.25rem;
-	color: var(--gray-8);
-	line-height: 1.5;
-	/* background-image: url('https://images.unsplash.com/photo-1644242629712-943ae5c8c4f3?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0Njc1MjQxNA&ixlib=rb-1.2.1&q=85'); */
-	/* background-size: cover; */
-}
-
-h1 em {
-	text-underline-offset: 0.25em;
-	color: var(--cyan-9);
-	text-decoration: underline;
+    min-height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1644242629712-943ae5c8c4f3?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0Njc1MjQxNA&ixlib=rb-1.2.1&q=85');
+    background-size: cover;
+    margin: 2rem;
+    font-family: system-ui;
+    font-size: 1.25rem;
+    color: var(--gray-8);
+    line-height: 1.5;
 }
 
 .button {
-	background: var(--gray-8);
-	padding: var(--size-2) var(--size-4);
-	font-weight: 700;
-	color: var(--gray-2);
-	border: 0;
-	cursor: pointer;
+    background: var(--gray-8);
+    padding: var(--size-2) var(--size-4);
+    font-weight: 700;
+    color: var(--gray-2);
+    text-transform: capitalize;
+    border: 0;
+    cursor: pointer;
 }
 
 .button:hover,
 .button:focus {
-	background: var(--cyan-9);
+    background: var(--cyan-9);
+}
+
+h2 {
+    color: var(--cyan-9);
 }
 
 form {
-	display: grid;
-	gap: 1em;
+    display: grid;
+    gap: 1em;
 }
 
 /* * Modal Styling */
 .modal {
-	padding: 1em;
-	max-width: 50ch;
-	/* border: 0; */
-	box-shadow: 0 0 1em rgb(0 0 0 / .3);
+    max-width: 50ch;
+    background-color: #fff;
+    padding: 0;
+    color: #222;
+    border: 0;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
+}
+
+.modal__content {
+    padding: 1rem;
 }
 
 .modal > * {
-	margin: 0 0 0.5rem 0;
+    margin: 0 0 0.5rem 0;
+}
+
+/* * Animation Styling */
+.modal[open] {
+    animation: slideUp 1s forwards, fadeIn 0.5s forwards;
+}
+
+.modal[closing] {
+    display: block;
+    inset: 0;
+    pointer-events: none;
+    animation: fadeOut 0.5s forwards;
 }
 
 .modal::backdrop {
-	background: rgb(0 0 0 / 0.4);
+    background: rgb(0 0 0 / 0.4);
+}
+
+.modal[open]::backdrop {
+    animation: fadeIn 0.5s forwards;
+}
+
+.modal[closing]::backdrop {
+    animation: fadeOut 0.5s forwards;
+}
+
+/* * Keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }

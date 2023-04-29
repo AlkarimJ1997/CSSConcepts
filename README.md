@@ -114,8 +114,8 @@ It's useful for setting container widths. Consider the following CSS that is use
 
 ```css
 .content {
-	width: 70%;
-	max-width: 70rem;
+    width: 70%;
+    max-width: 70rem;
 }
 ```
 
@@ -125,8 +125,8 @@ Notice we also use the `margin-inline` property and auto margins to center the e
 
 ```css
 .content {
-	width: min(70%, 70rem);
-	margin-inline: auto;
+    width: min(70%, 70rem);
+    margin-inline: auto;
 }
 ```
 
@@ -138,7 +138,7 @@ It's useful for setting responsive padding on sections. Rather than using media 
 
 ```css
 section {
-	padding-block: min(20vh, 10rem);
+    padding-block: min(20vh, 10rem);
 }
 ```
 
@@ -150,7 +150,7 @@ Unlike entire sections with `min()`, we can use `max()` for padding and margin o
 
 ```css
 p {
-	padding: max(3vh, 1.5rem);
+    padding: max(3vh, 1.5rem);
 }
 ```
 
@@ -160,7 +160,7 @@ Consider the following CSS:
 
 ```css
 .content {
-	width: max(300px, 70%);
+    width: max(300px, 70%);
 }
 ```
 
@@ -178,11 +178,11 @@ It's amazing for responsive typography.
 
 ```css
 h1 {
-	font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(2rem, 5vw, 4rem);
 }
 
 p {
-	font-size: clamp(1rem, 1.25vw, 1.25rem);
+    font-size: clamp(1rem, 1.25vw, 1.25rem);
 }
 ```
 
@@ -190,7 +190,7 @@ It's also nice to add a base `rem` to the `vw` value so it's responsive at diffe
 
 ```css
 h1 {
-	font-size: clamp(3rem, 10vw + 1rem, 4rem);
+    font-size: clamp(3rem, 10vw + 1rem, 4rem);
 }
 ```
 
@@ -202,7 +202,7 @@ Remember to be careful as a min-width can cause issues on mobile.
 
 ```css
 .content {
-	width: clamp(300px, 50%, 20rem);
+    width: clamp(300px, 50%, 20rem);
 }
 ```
 
@@ -216,7 +216,7 @@ Typically, it's great for compressing the edges of a container so its content is
 
 ```css
 .container {
-	width: min(1200px, calc(100% - 2rem));
+    width: min(1200px, calc(100% - 2rem));
 }
 ```
 
@@ -232,9 +232,9 @@ It's typically used for CSS resets.
 *,
 *::before,
 *::after {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 ```
 
@@ -246,11 +246,11 @@ Consider the following HTML:
 
 ```html
 <div class="parent">
-	<p>1</p>
-	<p>2</p>
-	<div class="child">
-		<p>3</p>
-	</div>
+    <p>1</p>
+    <p>2</p>
+    <div class="child">
+        <p>3</p>
+    </div>
 </div>
 ```
 
@@ -258,7 +258,7 @@ The following CSS will select the first two `p` elements, but not the third:
 
 ```css
 .parent > p {
-	color: red;
+    color: red;
 }
 ```
 
@@ -266,7 +266,7 @@ Whereas the following CSS will select all three `p` elements:
 
 ```css
 .parent p {
-	color: red;
+    color: red;
 }
 ```
 
@@ -278,9 +278,9 @@ Consider the following HTML:
 
 ```html
 <div class="parent">
-	<div class="box" />
-	<div class="box" />
-	<div class="box" />
+    <div class="box" />
+    <div class="box" />
+    <div class="box" />
 </div>
 ```
 
@@ -290,7 +290,7 @@ In this case, there is no `div` with class `box` before the first `div` element.
 
 ```css
 .parent .box + .box {
-	margin-left: 1rem;
+    margin-left: 1rem;
 }
 ```
 
@@ -328,7 +328,7 @@ The following CSS will select the second, third, and fourth `div` elements, but 
 
 ```css
 .parent .box ~ .box {
-	margin-left: 1rem;
+    margin-left: 1rem;
 }
 ```
 
@@ -349,7 +349,7 @@ The following CSS will select the second and third `a` elements because they hav
 
 ```css
 a[target] {
-	color: red;
+    color: red;
 }
 ```
 
@@ -359,7 +359,7 @@ The following CSS will select all `a` elements whose class begins with `another`
 
 ```css
 a[class|='another'] {
-	color: red;
+    color: red;
 }
 ```
 
@@ -370,7 +370,7 @@ So the following CSS **will not work** because `a` elements' `href` attributes d
 ```css
 a[href|='http'],
 a[href|='https'] {
-	color: red;
+    color: red;
 }
 ```
 
@@ -380,7 +380,7 @@ We also don't need to check for `https` explicitly because `http` is a substring
 
 ```css
 a[href^='http'] {
-	color: red;
+    color: red;
 }
 ```
 
@@ -390,7 +390,7 @@ The following CSS will select all `a` elements whose `href` ends with `.ca`.
 
 ```css
 a[href$='.ca'] {
-	color: red;
+    color: red;
 }
 ```
 
@@ -398,7 +398,7 @@ We can do more by combining other selectors. The following CSS will select all `
 
 ```css
 a:not([href='#']) {
-	color: red;
+    color: red;
 }
 ```
 
@@ -408,7 +408,7 @@ The following CSS will select all `a` elements whose href contains `google`.
 
 ```css
 a[href*='google'] {
-	color: red;
+    color: red;
 }
 ```
 
@@ -422,12 +422,12 @@ Consider the following HTML:
 
 ```html
 <header>
-	<p>This is a title</p>
+    <p>This is a title</p>
 </header>
 <div class="parent">
-	<h1 class="heading">This is a heading</h1>
-	<p>This is a paragraph</p>
-	<p><a>This is a link</a></p>
+    <h1 class="heading">This is a heading</h1>
+    <p>This is a paragraph</p>
+    <p><a>This is a link</a></p>
 </div>
 ```
 
@@ -436,7 +436,7 @@ Before, we would select the `h1` and `a` elements in `.parent` with the followin
 ```css
 .parent h1,
 .parent a {
-	color: red;
+    color: red;
 }
 ```
 
@@ -446,7 +446,7 @@ With `:is()`, we can select the `h1` and `a` elements with the following CSS and
 
 ```css
 .parent :is(h1, a) {
-	color: red;
+    color: red;
 }
 ```
 
@@ -454,7 +454,7 @@ Class names are also valid in the `:is()` selector.
 
 ```css
 .parent :is(.heading, a) {
-	color: red;
+    color: red;
 }
 ```
 
@@ -462,7 +462,7 @@ Another use case for `:is()` is with hover states. With the same HTML, we can ad
 
 ```css
 :is(header, .parent) p:hover {
-	color: red;
+    color: red;
 }
 ```
 
@@ -472,11 +472,11 @@ One caveat to keep in mind is that `:is()` takes the specificity of the most spe
 
 ```css
 .parent :is(.heading, a) {
-	color: red;
+    color: red;
 }
 
 .parent a {
-	color: blue;
+    color: blue;
 }
 ```
 
@@ -492,11 +492,11 @@ Consider the following CSS:
 
 ```css
 .parent :where(.heading, a) {
-	color: red;
+    color: red;
 }
 
 .parent a {
-	color: blue;
+    color: blue;
 }
 ```
 
@@ -532,7 +532,7 @@ The following CSS will select all `div` elements that have a `p` element as a ch
 
 ```css
 div:has(p) {
-	/* styles */
+    /* styles */
 }
 ```
 
@@ -541,12 +541,12 @@ This can be taken a step further.
 ```css
 /* Select div that has an element with class .title */
 div:has(.title) {
-	/* styles */
+    /* styles */
 }
 
 /* Select div that has an element with class .title and an a element */
 div:has(.title, a) {
-	/* styles */
+    /* styles */
 }
 ```
 
@@ -558,13 +558,13 @@ Consider the following HTML:
 
 ```html
 <article>
-	<h1 class="article__title">This is a heading</h1>
-	<h2 class="article__subtitle">This is a subtitle</h2>
+    <h1 class="article__title">This is a heading</h1>
+    <h2 class="article__subtitle">This is a subtitle</h2>
 </article>
 
 <article>
-	<h1 class="article__title">This is a heading</h1>
-	<p class="article__paragraph">This is a paragraph</p>
+    <h1 class="article__title">This is a heading</h1>
+    <p class="article__paragraph">This is a paragraph</p>
 </article>
 ```
 
@@ -572,7 +572,7 @@ If we only want to add a margin to the `h1` element if it has an adjacent siblin
 
 ```css
 .article__title:has(+ .article__subtitle) {
-	margin-block-end: 2rem;
+    margin-block-end: 2rem;
 }
 ```
 
@@ -582,15 +582,15 @@ Let's look at the following HTML:
 
 ```html
 <div class="image-gallery">
-	<img src="https://picsum.photos/200/300" alt="Image 1" />
-	<img src="https://picsum.photos/200/300" alt="Image 2" />
-	<img src="https://picsum.photos/200/300" alt="Image 3" />
-	<img src="https://picsum.photos/200/300" alt="Image 4" />
-	<img src="https://picsum.photos/200/300" alt="Image 5" />
-	<img src="https://picsum.photos/200/300" alt="Image 6" />
-	<img src="https://picsum.photos/200/300" alt="Image 7" />
-	<img src="https://picsum.photos/200/300" alt="Image 8" />
-	<img src="https://picsum.photos/200/300" alt="Image 9" />
+    <img src="https://picsum.photos/200/300" alt="Image 1" />
+    <img src="https://picsum.photos/200/300" alt="Image 2" />
+    <img src="https://picsum.photos/200/300" alt="Image 3" />
+    <img src="https://picsum.photos/200/300" alt="Image 4" />
+    <img src="https://picsum.photos/200/300" alt="Image 5" />
+    <img src="https://picsum.photos/200/300" alt="Image 6" />
+    <img src="https://picsum.photos/200/300" alt="Image 7" />
+    <img src="https://picsum.photos/200/300" alt="Image 8" />
+    <img src="https://picsum.photos/200/300" alt="Image 9" />
 </div>
 ```
 
@@ -598,19 +598,19 @@ Let's pretend we have a grid layout where we have a 3x3 grid of images. We can u
 
 ```css
 .image-gallery {
-	/* grid stuff */
+    /* grid stuff */
 }
 
 .image-gallery > img {
-	width: 100%;
-	aspect-ratio: 1 / 1;
-	object-fit: cover;
-	transition: scale 350ms ease, opacity 350ms linear;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: scale 350ms ease, opacity 350ms linear;
 }
 
 .image-gallery:has(img:hover) img:not(:hover) {
-	scale: 0.9;
-	opacity: 0.7;
+    scale: 0.9;
+    opacity: 0.7;
 }
 ```
 
@@ -625,12 +625,12 @@ Consider the following html:
 
 ```html
 <article>
-	<h1 class="article__title">This is a heading</h1>
-	<select class="article__select theme" name="" id="">
-		<option value="light">Light</option>
-		<option value="dark">Dark</option>
-	</select>
-	<p class="article__paragraph">This is a paragraph</p>
+    <h1 class="article__title">This is a heading</h1>
+    <select class="article__select theme" name="" id="">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+    <p class="article__paragraph">This is a paragraph</p>
 </article>
 ```
 
@@ -638,11 +638,11 @@ We can use `:root` and `:has()` to change the theme of the page.
 
 ```css
 :root {
-	/* dark mode colors */
+    /* dark mode colors */
 }
 
 :root:has(.theme > [value='light']:checked) {
-	/* light mode colors */
+    /* light mode colors */
 }
 ```
 
@@ -654,10 +654,10 @@ Consider the following HTML:
 <button class="button" data-class="open">Open Modal</button>
 
 <dialog class="dialog" id="modal">
-	<h2>An interesting title</h2>
-	<p>Some interesting text</p>
-	<p>Some more interesting text</p>
-	<button class="button" data-class="close">Close</button>
+    <h2>An interesting title</h2>
+    <p>Some interesting text</p>
+    <p>Some more interesting text</p>
+    <button class="button" data-class="close">Close</button>
 </dialog>
 ```
 
@@ -665,8 +665,8 @@ We can use the `:has()` selector to prevent scrolling when the modal is open.
 
 ```css
 html:has(:modal) {
-	overflow: hidden;
-	padding-inline-end: 16px; /* Prevents the page from jumping */
+    overflow: hidden;
+    padding-inline-end: 16px; /* Prevents the page from jumping */
 }
 ```
 
@@ -682,15 +682,15 @@ Consider the following HTML:
 
 ```html
 <div class="parent">
-	<h1 class="heading">This is a heading</h1>
-	<p>This is a paragraph</p>
-	<p><a>This is a link</a></p>
+    <h1 class="heading">This is a heading</h1>
+    <p>This is a paragraph</p>
+    <p><a>This is a link</a></p>
 </div>
 
 <div class="parent__2">
-	<h1 class="heading">This is a heading</h1>
-	<p>This is a paragraph</p>
-	<p><a>This is a link</a></p>
+    <h1 class="heading">This is a heading</h1>
+    <p>This is a paragraph</p>
+    <p><a>This is a link</a></p>
 </div>
 ```
 
@@ -698,7 +698,7 @@ The following CSS wll add a margin to all children of `.parent` and `.parent__2`
 
 ```css
 * + * {
-	margin-top: 1.5rem;
+    margin-top: 1.5rem;
 }
 ```
 
@@ -845,7 +845,7 @@ But consider the following HTML:
 
 ```html
 <body>
-	<div class="example">Hello World!</div>
+    <div class="example">Hello World!</div>
 </body>
 ```
 
@@ -853,14 +853,14 @@ If we have the following CSS, the `div` will still only fit the content because 
 
 ```css
 body {
-	font-size: 2rem;
-	border: 3px solid red;
+    font-size: 2rem;
+    border: 3px solid red;
 }
 
 .example {
-	background: #234;
-	color: white;
-	height: 100%;
+    background: #234;
+    color: white;
+    height: 100%;
 }
 ```
 
@@ -891,15 +891,15 @@ Consider the following HTML:
 
 ```html
 <nav class="nav">
-	<ul class="nav__list">
-		<li><a href="#">Home</a></li>
-		<li><a href="#">About</a></li>
-		<li><a href="#">Blog</a></li>
-		<li><a href="#">Pricing</a></li>
-		<li><a href="#">Contact</a></li>
-		<li><a href="#">Login</a></li>
-		<li><a href="#">Sign Up</a></li>
-	</ul>
+    <ul class="nav__list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Sign Up</a></li>
+    </ul>
 </nav>
 ```
 
@@ -907,12 +907,12 @@ Before doing anything, it's essential to make sure you tell the `ul` it has room
 
 ```css
 .nav__list {
-	display: flex;
-	gap: 1rem;
+    display: flex;
+    gap: 1rem;
 }
 
 .nav {
-	flex-grow: 1; /* This is the key */
+    flex-grow: 1; /* This is the key */
 }
 ```
 
@@ -920,7 +920,7 @@ Now we can use auto margins to spread the links into different sections
 
 ```css
 .nav__list > li:nth-of-type(6) {
-	margin-left: auto; /* Now Login and Signup are pushed all the way to the right */
+    margin-left: auto; /* Now Login and Signup are pushed all the way to the right */
 }
 ```
 
@@ -928,7 +928,7 @@ If we added a second auto margin on the first `li` element, the first 5 links wo
 
 ```css
 .nav__list > li:first-of-type {
-	margin-left: auto;
+    margin-left: auto;
 }
 ```
 
@@ -944,8 +944,8 @@ To fix this issue, we can use the following CSS, and this should always be done 
 
 ```css
 img {
-	display: block;
-	max-width: 100%;
+    display: block;
+    max-width: 100%;
 }
 ```
 
@@ -988,7 +988,7 @@ The following CSS will add an image before all `h1` elements.
 
 ```css
 h1::before {
-	content: url('//unsplash.it/100/100');
+    content: url('//unsplash.it/100/100');
 }
 ```
 
@@ -1002,29 +1002,30 @@ Make sure to include Font Awesome in your HTML.
 
 ```html
 <link
-	rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+/>
 ```
 
 ```css
 h2::before {
-	font-family: 'Font Awesome 5 Free';
-	font-weight: 900;
-	content: '\f0e7';
-	display: block;
-	margin-bottom: 0.5rem;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: '\f0e7';
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
 a[href$='.pdf']::after {
-	font-family: 'Font Awesome 5 Free';
-	content: '\f1c1';
+    font-family: 'Font Awesome 5 Free';
+    content: '\f1c1';
 }
 
 a[href^='http']::after {
-	font-family: 'Font Awesome 5 Free';
-	content: '\f35d';
-	font-size: 0.8em;
-	font-weight: 900;
+    font-family: 'Font Awesome 5 Free';
+    content: '\f35d';
+    font-size: 0.8em;
+    font-weight: 900;
 }
 ```
 
@@ -1034,11 +1035,11 @@ The following CSS will add opening and closing quotes before all `blockquote` el
 
 ```css
 blockquote::before {
-	content: open-quote;
+    content: open-quote;
 }
 
 blockquote::after {
-	content: close-quote;
+    content: close-quote;
 }
 ```
 
@@ -1052,28 +1053,28 @@ The following CSS will add a tooltip to the `a` element.
 
 ```css
 a[data-tool-tip] {
-	position: relative;
+    position: relative;
 }
 
 a[data-tool-tip]::after {
-	content: attr(data-tool-tip);
-	display: block;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	background-color: rgba(0, 0, 0, 0.7);
-	padding: 1em 3em;
-	color: white;
-	border-radius: 5px;
-	font-size: 0.8em;
-	white-space: nowrap;
-	transform: scale(0); /* start at 0 size */
-	transition: transform 0.15s ease-out, bottom 0.15s ease-out;
+    content: attr(data-tool-tip);
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1em 3em;
+    color: white;
+    border-radius: 5px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    transform: scale(0); /* start at 0 size */
+    transition: transform 0.15s ease-out, bottom 0.15s ease-out;
 }
 
 a[data-tool-tip]:hover::after {
-	transform: scale(1); /* scale to 1 size on hover */
-	bottom: 100%;
+    transform: scale(1); /* scale to 1 size on hover */
+    bottom: 100%;
 }
 ```
 
@@ -1083,7 +1084,7 @@ The first step is to add a `counter-reset` property to the parent element.
 
 ```css
 .parent {
-	counter-reset: myCounter;
+    counter-reset: myCounter;
 }
 ```
 
@@ -1091,8 +1092,8 @@ Then, add a `counter-increment` property and `content` property to the child ele
 
 ```css
 .child::before {
-	counter-increment: myCounter;
-	content: counter(myCounter);
+    counter-increment: myCounter;
+    content: counter(myCounter);
 }
 ```
 
@@ -1100,25 +1101,25 @@ We can take this a step further with the following CSS.
 
 ```css
 .child {
-	position: relative;
+    position: relative;
 }
 
 .child::before {
-	counter-increment: myCounter;
-	content: counter(myCounter);
-	position: absolute;
-	top: -0.5em;
-	left: -2.5em;
-	background: white;
-	width: 2em;
-	height: 2em;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 50%;
-	border: 3px solid rgba(0, 0, 0, 0.7);
-	color: rgba(0, 0, 0, 0.7);
-	box-sizing: border-box; /* include border in width and height */
+    counter-increment: myCounter;
+    content: counter(myCounter);
+    position: absolute;
+    top: -0.5em;
+    left: -2.5em;
+    background: white;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 3px solid rgba(0, 0, 0, 0.7);
+    color: rgba(0, 0, 0, 0.7);
+    box-sizing: border-box; /* include border in width and height */
 }
 ```
 
@@ -1130,8 +1131,8 @@ The following CSS will enlarge and colorize first letter of all `p` elements
 
 ```css
 p::first-letter {
-	font-size: 5em;
-	line-height: 1rem; /* to prevent line height from being outrageous*/
+    font-size: 5em;
+    line-height: 1rem; /* to prevent line height from being outrageous*/
 }
 ```
 
@@ -1141,13 +1142,13 @@ However, this is also known as a raised cap. If you want a dropped cap, you can 
 
 ```css
 p::first-letter {
-	font-size: 6em;
-	font-weight: 700;
-	background-color: yellow;
-	padding: 0.05em;
-	margin-right: 0.05em;
-	border: 5px solid black;
-	float: left;
+    font-size: 6em;
+    font-weight: 700;
+    background-color: yellow;
+    padding: 0.05em;
+    margin-right: 0.05em;
+    border: 5px solid black;
+    float: left;
 }
 ```
 
@@ -1157,8 +1158,8 @@ The following CSS will make the first line of all `h3` elements bolded and upper
 
 ```css
 h3::first-line {
-	font-weight: 700;
-	text-transform: uppercase;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 ```
 
@@ -1179,16 +1180,16 @@ For modern use, the `::marker` pseudo element allows us to add an icon to a list
 
 ```css
 li {
-	list-style: none;
-	padding-left: 0.5em; /* have to use padding for icon room */
+    list-style: none;
+    padding-left: 0.5em; /* have to use padding for icon room */
 }
 
 li::marker {
-	color: red;
-	font-size: 1em;
-	content: '\f13d';
-	font-family: 'Font Awesome 5 Free';
-	font-weight: 700;
+    color: red;
+    font-size: 1em;
+    content: '\f13d';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 700;
 }
 ```
 
@@ -1198,8 +1199,8 @@ The `::selection` pseudo element selects the portion of an element that is selec
 
 ```css
 ::selection {
-	background-color: red;
-	color: white;
+    background-color: red;
+    color: white;
 }
 ```
 
@@ -1209,8 +1210,8 @@ The `::placeholder` pseudo element selects the placeholder text of an input elem
 
 ```css
 input::placeholder {
-	font-size: 0.8em;
-	color: rgba(0, 0, 0, 0.5);
+    font-size: 0.8em;
+    color: rgba(0, 0, 0, 0.5);
 }
 ```
 
@@ -1226,7 +1227,7 @@ The following CSS will highlight the placeholder text of all required form field
 
 ```css
 input[required]::placeholder {
-	border-color: red;
+    border-color: red;
 }
 ```
 
@@ -1234,7 +1235,7 @@ We can also change the CSS of inputs once they are filled out.
 
 ```css
 input:not(:placeholder-shown) {
-	font-size: 1.2em;
+    font-size: 1.2em;
 }
 ```
 
@@ -1255,7 +1256,7 @@ You can give a block-level element a width and height, and it will take up that 
 
 ```css
 p {
-	width: 50%; /* will take up 50% of the parent element, but still stack */
+    width: 50%; /* will take up 50% of the parent element, but still stack */
 }
 ```
 
@@ -1277,14 +1278,14 @@ What's very important to understand about inline elements is their behavior with
 
 ```css
 a {
-	width: 100px; /* will not work */
-	height: 100px; /* will not work */
+    width: 100px; /* will not work */
+    height: 100px; /* will not work */
 
-	margin-top: 10px; /* will not work */
-	margin-bottom: 10px; /* will not work */
+    margin-top: 10px; /* will not work */
+    margin-bottom: 10px; /* will not work */
 
-	padding-top: 10px; /* will not work */
-	padding-bottom: 10px; /* will not work */
+    padding-top: 10px; /* will not work */
+    padding-bottom: 10px; /* will not work */
 }
 ```
 
@@ -1292,11 +1293,11 @@ a {
 
 ```css
 a {
-	margin-left: 10px; /* will work */
-	margin-right: 10px; /* will work */
+    margin-left: 10px; /* will work */
+    margin-right: 10px; /* will work */
 
-	padding-left: 10px; /* will work */
-	padding-right: 10px; /* will work */
+    padding-left: 10px; /* will work */
+    padding-right: 10px; /* will work */
 }
 ```
 
@@ -1324,11 +1325,11 @@ By setting `display: inline-block` on an inline element, you can give it `paddin
 
 ```css
 a {
-	display: inline-block;
-	padding: 1.25em 2.5em;
-	background-color: #000;
-	color: #fff;
-	text-decoration: none;
+    display: inline-block;
+    padding: 1.25em 2.5em;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
 }
 ```
 
@@ -1380,8 +1381,8 @@ The following CSS will position the element above all other elements on the page
 
 ```css
 .box {
-	position: relative;
-	z-index: 1;
+    position: relative;
+    z-index: 1;
 }
 ```
 
@@ -1395,9 +1396,9 @@ Note that this is only for explanation purposes. You'll almost never use `positi
 
 ```css
 .box {
-	position: relative;
-	top: 20px;
-	left: 10px;
+    position: relative;
+    top: 20px;
+    left: 10px;
 }
 ```
 
@@ -1415,11 +1416,11 @@ For example, the following CSS will position the element at the top left corner 
 
 ```css
 .box {
-	width: 50px;
-	height: 50px;
-	position: absolute;
-	top: 0;
-	left: 0;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 ```
 
@@ -1429,11 +1430,11 @@ The following CSS will have the element take up the left half of the page.
 
 ```css
 .box {
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 50%;
 }
 ```
 
@@ -1445,7 +1446,7 @@ Consider the following HTML:
 
 ```html
 <div class="parent">
-	<div class="child"></div>
+    <div class="child"></div>
 </div>
 ```
 
@@ -1453,13 +1454,13 @@ The following CSS will position the child element at the top left corner of the 
 
 ```css
 .parent {
-	position: relative;
+    position: relative;
 }
 
 .child {
-	position: absolute;
-	top: 0;
-	left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 ```
 
@@ -1473,8 +1474,8 @@ For example, a navigation bar can stay on top of the page even if the user scrol
 
 ```css
 .nav {
-	position: fixed;
-	top: 0;
+    position: fixed;
+    top: 0;
 }
 ```
 
@@ -1490,8 +1491,8 @@ TL;DR: `position: sticky` is like `position: relative` as long as the parent is 
 
 ```css
 .nav {
-	position: sticky;
-	top: 0;
+    position: sticky;
+    top: 0;
 }
 ```
 
@@ -1517,12 +1518,12 @@ Finally, set the `vertical-align` property of the child element to `middle`.
 
 ```css
 .parent {
-	display: table;
+    display: table;
 }
 
 .child {
-	display: table-cell;
-	vertical-align: middle;
+    display: table-cell;
+    vertical-align: middle;
 }
 ```
 
@@ -1537,14 +1538,14 @@ Finally, set the `transform` property of the child element to `translate(-50%, -
 
 ```css
 .parent {
-	position: relative;
+    position: relative;
 }
 
 .child {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 ```
 
@@ -1558,9 +1559,9 @@ Finally, set the `align-items` property of the parent element to `center`.
 
 ```css
 .parent {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 ```
 
@@ -1575,8 +1576,8 @@ Note that `place-items` is a shorthand for `align-items` and `justify-items`.
 
 ```css
 .parent {
-	display: grid;
-	place-items: center;
+    display: grid;
+    place-items: center;
 }
 ```
 
@@ -1589,11 +1590,11 @@ Second, set the `margin` property of the child element to `auto`.
 
 ```css
 .parent {
-	display: flex; /* or grid */
+    display: flex; /* or grid */
 }
 
 .child {
-	margin: auto;
+    margin: auto;
 }
 ```
 
@@ -1601,9 +1602,9 @@ You can also utilize auto margins with `position: fixed` to center an element in
 
 ```css
 .element {
-	position: fixed;
-	inset: 0;
-	margin: auto;
+    position: fixed;
+    inset: 0;
+    margin: auto;
 }
 ```
 
@@ -1611,13 +1612,13 @@ Similarly, if you have a child you want to center in the parent, you can use aut
 
 ```css
 .parent {
-	position: relative;
+    position: relative;
 }
 
 .child {
-	position: absolute;
-	inset: 0;
-	margin: auto;
+    position: absolute;
+    inset: 0;
+    margin: auto;
 }
 ```
 
@@ -1639,11 +1640,11 @@ You can also specify a color.
 
 ```css
 .box {
-	box-shadow: 20px 20px;
+    box-shadow: 20px 20px;
 }
 
 .box {
-	box-shadow: 20px 20px red;
+    box-shadow: 20px 20px red;
 }
 ```
 
@@ -1653,7 +1654,7 @@ The blur radius cannot be a negative value.
 
 ```css
 .box {
-	box-shadow: 20px 20px 20px;
+    box-shadow: 20px 20px 20px;
 }
 ```
 
@@ -1663,7 +1664,7 @@ It can be a negative value that will spread the shadow inwards.
 
 ```css
 .box {
-	box-shadow: 20px 20px 20px 20px;
+    box-shadow: 20px 20px 20px 20px;
 }
 ```
 
@@ -1671,12 +1672,12 @@ The fifth value is the color of the shadow. It can be any valid CSS color value 
 
 ```css
 .box {
-	color: red;
-	box-shadow: 0 0 20px 20px currentcolor;
+    color: red;
+    box-shadow: 0 0 20px 20px currentcolor;
 }
 
 .box {
-	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
 }
 ```
 
@@ -1686,7 +1687,7 @@ It will always be on top of the background and behind the content.
 
 ```css
 .box {
-	box-shadow: inset 0 0 20px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 20px 20px rgba(0, 0, 0, 0.5);
 }
 ```
 
@@ -1698,8 +1699,8 @@ The first shadow will be on top, and the last shadow will be on the bottom.
 
 ```css
 .box {
-	box-shadow: 100px 100px 100px red, 100px -100px 100px blue,
-		-100px -100px 100px green, -100px 100px 100px purple;
+    box-shadow: 100px 100px 100px red, 100px -100px 100px blue,
+        -100px -100px 100px green, -100px 100px 100px purple;
 }
 ```
 
@@ -1709,7 +1710,7 @@ The first shadow will be on top, and the last shadow will be on the bottom.
 
 ```css
 .box {
-	box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.25);
 }
 ```
 
@@ -1717,7 +1718,7 @@ The first shadow will be on top, and the last shadow will be on the bottom.
 
 ```css
 .box {
-	box-shadow: 0 5px 60px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 5px 60px 0 rgba(0, 0, 0, 0.25);
 }
 ```
 
@@ -1727,8 +1728,8 @@ Consider the following HTML:
 
 ```html
 <div class="box">
-	<h1>This is a heading</h1>
-	<p>This is a paragraph</p>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph</p>
 </div>
 ```
 
@@ -1736,13 +1737,13 @@ The naive approach would animate the `box-shadow` property like so:
 
 ```css
 .box {
-	box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.1);
-	transition: transform 1s ease, box-shadow 1s ease;
+    box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.1);
+    transition: transform 1s ease, box-shadow 1s ease;
 }
 
 .box:hover {
-	box-shadow: 0 0.5rem 1rem -0.25em rgba(0, 0, 0, 0.3);
-	transform: translateY(-0.35em) scale(1.02);
+    box-shadow: 0 0.5rem 1rem -0.25em rgba(0, 0, 0, 0.3);
+    transform: translateY(-0.35em) scale(1.02);
 }
 ```
 
@@ -1752,20 +1753,20 @@ Consider the following approach instead, which uses pseudo-elements and is much 
 
 ```css
 .box {
-	position: relative;
+    position: relative;
 }
 
 .box::after {
-	content: '';
-	position: absolute;
-	inset: 0;
-	box-shadow: 0 0.5rem 1rem -0.25em rgba(0, 0, 0, 0.3);
-	opacity: 0;
-	transition: opacity 1s ease;
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow: 0 0.5rem 1rem -0.25em rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 1s ease;
 }
 
 .box:hover::after {
-	opacity: 1;
+    opacity: 1;
 }
 ```
 
@@ -1787,7 +1788,7 @@ So if you want 3 borders of width 10px, 20px, and 30px, you would do the followi
 
 ```css
 .box {
-	box-shadow: 0 0 0 10px red, 0 0 0 30px blue, 0 0 0 60px green;
+    box-shadow: 0 0 0 10px red, 0 0 0 30px blue, 0 0 0 60px green;
 }
 ```
 
@@ -1799,23 +1800,23 @@ You can use a box-shadow with an enormous spread to create a faded background fo
 
 ```css
 .modal {
-	position: absolute;
-	width: 70vw;
-	height: 70vh;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background-color: white;
-	display: grid;
-	place-items: center;
-	opacity: 0;
-	z-index: -1;
-	box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.5);
+    position: absolute;
+    width: 70vw;
+    height: 70vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    z-index: -1;
+    box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.5);
 }
 
 .is-open {
-	opacity: 1;
-	z-index: 10;
+    opacity: 1;
+    z-index: 10;
 }
 ```
 
@@ -1825,31 +1826,31 @@ You can use pseudo elements and box-shadows to create peeled corners.
 
 ```css
 .box {
-	background: white;
-	padding: 2.5em;
-	position: relative;
+    background: white;
+    padding: 2.5em;
+    position: relative;
 }
 
 .box::before,
 .box::after {
-	content: '';
-	position: absolute;
-	top: 90%;
-	bottom: 20px;
-	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
-	z-index: -1;
+    content: '';
+    position: absolute;
+    top: 90%;
+    bottom: 20px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+    z-index: -1;
 }
 
 .box::before {
-	left: 5px;
-	right: 45px;
-	transform: rotate(-3deg);
+    left: 5px;
+    right: 45px;
+    transform: rotate(-3deg);
 }
 
 .box::after {
-	left: 45px;
-	right: 5px;
-	transform: rotate(3deg);
+    left: 45px;
+    right: 5px;
+    transform: rotate(3deg);
 }
 ```
 
@@ -1869,7 +1870,7 @@ Consider the following HTML and CSS:
 
 ```css
 .bg-image {
-	background-image: url('//unsplash.it/800');
+    background-image: url('//unsplash.it/800');
 }
 ```
 
@@ -1879,8 +1880,8 @@ So, it either needs content, `width` or `height`, or even `padding` to be visibl
 
 ```css
 .bg-image {
-	background-image: url('//unsplash.it/800');
-	padding: 20em;
+    background-image: url('//unsplash.it/800');
+    padding: 20em;
 }
 ```
 
@@ -1894,10 +1895,10 @@ Since it's a shorthand, you can also do `background-size: 100% 50px` to make the
 
 ```css
 .bg-image {
-	background-image: url('//unsplash.it/800');
-	background-repeat: no-repeat;
-	background-size: 100%;
-	padding: 20em;
+    background-image: url('//unsplash.it/800');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 20em;
 }
 ```
 
@@ -1916,11 +1917,11 @@ For example, the following CSS will position the image 10px off the top left cor
 
 ```css
 .bg-image {
-	background-image: url('//unsplash.it/800');
-	background-repeat: no-repeat;
-	background-size: 100%;
-	background-position: top 10px left 10px;
-	padding: 20em;
+    background-image: url('//unsplash.it/800');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top 10px left 10px;
+    padding: 20em;
 }
 ```
 
@@ -1932,9 +1933,9 @@ This will make the image cover the entire element, and it will maintain its aspe
 
 ```css
 .bg-image {
-	background-image: url('//unsplash.it/800');
-	background-size: cover;
-	padding: 20em;
+    background-image: url('//unsplash.it/800');
+    background-size: cover;
+    padding: 20em;
 }
 ```
 
@@ -1952,13 +1953,13 @@ It is useful for creating perfect squares, responsive videos, or if you want a 1
 
 ```css
 .square {
-	width: 2rem;
-	aspect-ratio: 1 / 1;
+    width: 2rem;
+    aspect-ratio: 1 / 1;
 }
 
 .video {
-	max-width: 100%;
-	aspect-ratio: 16 / 9;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
 }
 ```
 
@@ -1970,12 +1971,12 @@ Try to use a very large font face and size.
 
 ```css
 h1 {
-	font-size: 15vw;
-	background-image: url('//unsplash.it/800');
-	background-size: cover;
-	background-clip: text;
-	-webkit-background-clip: text;
-	color: transparent;
+    font-size: 15vw;
+    background-image: url('//unsplash.it/800');
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 ```
 
@@ -1985,7 +1986,7 @@ To enable smooth scrolling, use the `scroll-behavior` property on the `html` ele
 
 ```css
 html {
-	scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 ```
 
@@ -1993,8 +1994,8 @@ Also, to add some padding in case the scrolling isn't perfect, use `scroll-paddi
 
 ```css
 html {
-	scroll-behavior: smooth;
-	scroll-padding-top: 200px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 200px;
 }
 ```
 
@@ -2006,30 +2007,30 @@ First, create a navigation with custom CSS properties.
 
 ```css
 header {
-	--text: #f4f4f4;
-	--text-inverse: #333;
-	--background: transparent;
+    --text: #f4f4f4;
+    --text-inverse: #333;
+    --background: transparent;
 
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 999;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 2em 3em;
-	transition: background 250ms ease-in;
-	background: var(--background);
-	color: var(--text);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 3em;
+    transition: background 250ms ease-in;
+    background: var(--background);
+    color: var(--text);
 }
 
 .nav-scrolled {
-	--text: #333;
-	--text-inverse: #f4f4f4;
-	--background: #f4f4f4;
+    --text: #333;
+    --text-inverse: #f4f4f4;
+    --background: #f4f4f4;
 
-	box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
 }
 ```
 
@@ -2040,18 +2041,18 @@ const header = document.querySelector('header');
 const sectionOne = document.querySelector('.home-intro');
 
 const sectionOneOptions = {
-	rootMargin: '-200px 0px 0px 0px',
+    rootMargin: '-200px 0px 0px 0px',
 };
 
 const sectionOneObserver = new IntersectionObserver(
-	([entry], sectionOneObserver) => {
-		if (!entry.isIntersecting) {
-			header.classList.add('nav-scrolled');
-		} else {
-			header.classList.remove('nav-scrolled');
-		}
-	},
-	sectionOneOptions
+    ([entry], sectionOneObserver) => {
+        if (!entry.isIntersecting) {
+            header.classList.add('nav-scrolled');
+        } else {
+            header.classList.remove('nav-scrolled');
+        }
+    },
+    sectionOneOptions
 );
 
 sectionOneObserver.observe(sectionOne);
@@ -2073,8 +2074,8 @@ This can create a cool inwards border effect on an element.
 
 ```css
 .element {
-	outline: 5px solid #333;
-	outline-offset: -15px;
+    outline: 5px solid #333;
+    outline-offset: -15px;
 }
 ```
 
@@ -2084,9 +2085,9 @@ We can use the `prefers-color-scheme` media query to detect if the user has dark
 
 ```css
 @media (prefers-color-scheme: dark) {
-	:root {
-		/* dark mode styles */
-	}
+    :root {
+        /* dark mode styles */
+    }
 }
 ```
 
@@ -2100,7 +2101,7 @@ With `:focus`, clicking on a button and then moving away from it will still keep
 
 ```css
 button:focus-visible {
-	/* styles */
+    /* styles */
 }
 ```
 
@@ -2114,13 +2115,13 @@ Ideally, it should come before the navigation.
 
 ```html
 <header>
-	<a class="skip" href="#main-content">Skip Navigation</a>
-	<nav class="nav">
-		<!-- navigation -->
-	</nav>
+    <a class="skip" href="#main-content">Skip Navigation</a>
+    <nav class="nav">
+        <!-- navigation -->
+    </nav>
 </header>
 <main id="main-content">
-	<!-- main content -->
+    <!-- main content -->
 </main>
 ```
 
@@ -2132,13 +2133,13 @@ We will use `transform` to move it off the screen, and not `top` because we want
 
 ```css
 .skip {
-	position: absolute;
-	transform: translateY(-120%);
-	transition: transform 325ms ease-in;
+    position: absolute;
+    transform: translateY(-120%);
+    transition: transform 325ms ease-in;
 }
 
 .skip:focus {
-	transform: translateY(0);
+    transform: translateY(0);
 }
 ```
 
@@ -2151,21 +2152,21 @@ It's important to note that `margin-left` and `margin-right` will not work with 
 ```css
 /* Scrollbar is the overall scrollbar */
 ::-webkit-scrollbar {
-	width: 2em;
+    width: 2em;
 }
 
 /* Track is the container */
 ::-webkit-scrollbar-track {
-	background: #f1f1f1;
-	border-radius: 100vw; /* pill shape trick */
-	margin-block: 0.5em;
+    background: #f1f1f1;
+    border-radius: 100vw; /* pill shape trick */
+    margin-block: 0.5em;
 }
 
 /* Thumb is the inside part */
 ::-webkit-scrollbar-thumb {
-	background: #888;
-	border: 0.5em solid #f1f1f1; /* makes it seem like it's fitting into the space*/
-	border-radius: 100vw; /* pill shape trick */
+    background: #888;
+    border: 0.5em solid #f1f1f1; /* makes it seem like it's fitting into the space*/
+    border-radius: 100vw; /* pill shape trick */
 }
 ```
 
@@ -2189,10 +2190,10 @@ Consider the following html:
 <button class="button" data-class="open">Open Modal</button>
 
 <dialog class="dialog" id="modal">
-	<h2>An interesting title</h2>
-	<p>Some interesting text</p>
-	<p>Some more interesting text</p>
-	<button class="button" data-class="close">Close</button>
+    <h2>An interesting title</h2>
+    <p>Some interesting text</p>
+    <p>Some more interesting text</p>
+    <button class="button" data-class="close">Close</button>
 </dialog>
 ```
 
@@ -2215,21 +2216,11 @@ const openButton = document.querySelector('[data-class="open"]');
 const closeButton = document.querySelector('[data-class="close"]');
 
 openButton.addEventListener('click', () => {
-	modal.showModal();
+    modal.showModal();
 });
 
 closeButton.addEventListener('click', () => {
-	modal.close();
-});
-```
-
-We can also add the following JS to close the modal when the user clicks outside of it.
-
-```js
-document.addEventListener('click', e => {
-	if (!modal.contains(e.target) && modal.open) {
-		modal.close();
-	}
+    modal.close();
 });
 ```
 
@@ -2237,7 +2228,7 @@ Also, if we have a form inside the modal, specifying `method="dialog"` will auto
 
 ```html
 <form method="dialog">
-	<!-- form -->
+    <!-- form -->
 </form>
 ```
 
@@ -2245,7 +2236,7 @@ To style the backdrop, we can use the `::backdrop` pseudo element.
 
 ```css
 dialog::backdrop {
-	background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
 }
 ```
 
@@ -2257,9 +2248,147 @@ To do so, use the `:modal` pseudo class.
 
 ```css
 :modal {
-	max-width: 30em;
-	border: 0;
+    max-width: 30em;
+    border: 0;
 }
+```
+
+Finally, let's see how to animate a `dialog` element from `display: none`
+
+Add the following `@keyframes` to your CSS.
+
+```css
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+```
+
+Now, animating the modal coming in is easy. The `open` attribute is added to it when it's opened, so we can use that.
+
+```css
+:modal[open] {
+    animation: slideUp 1s forwards, fadeIn 0.5s forwards;
+}
+
+:modal[open]::backdrop {
+    animation: fadeIn 0.5s forwards;
+}
+```
+
+Notice how we also animate the backdrop so that it fades in. The problem comes with animating the closing, because it goes to `display: none`, which is not animatable.
+
+But we can work around this. First, let's add a data attribute with JavaScript when the modal is closed.
+
+```js
+closeModal.addEventListener('click', () => {
+    modal.setAttribute('closing', '');
+});
+```
+
+Now, we can use this to animate the modal closing. We need to add a `display: block` so that it's actually animatable, but still keep it hidden.
+
+```css
+:modal[closing] {
+    display: block;
+    inset: 0;
+    pointer-events: none;
+    animation: fadeOut 0.5s forwards;
+}
+
+.modal[closing]::backdrop {
+    animation: fadeOut 0.5s forwards;
+}
+```
+
+Notice the following properties:
+
+-   `inset: 0` so that the modal stays in the same place after adding `display: block`
+-   `pointer-events: none` so that the user cannot interact with the modal
+
+Like before, we also animate the backdrop.
+
+Now, all we have to do is turn the `display: block` off after the animation is done.
+
+```js
+closeModal.addEventListener('click', () => {
+    modal.setAttribute('closing', '');
+
+    modal.addEventListener(
+        'animationend',
+        () => {
+            modal.removeAttribute('closing');
+            modal.close();
+        },
+        { once: true }
+    );
+});
+```
+
+We use the `animationend` event to remove the `closing` attribute so it can be opened again in the future.
+
+We also use the `once` option so that the event listener is only called once.
+
+Finally, we can add some logic to make it so that the modal closes when a user clicks outside of it.
+
+First make sure the content of the modal is wrapped in a `div`. We need to do this so that the browser thinks the `div` is being clicked, not the `dialog`, we can then click on the `::backdrop`, which isn't selectable with JavaScript, to close the modal.
+
+```html
+<dialog class="modal" id="modal">
+    <div class="modal__content">
+        <h2>An interesting title</h2>
+        <p>An interesting paragraph</p>
+        <p>A second interesting paragraph</p>
+        <button class="button close-button">close modal</button>
+    </div>
+</dialog>
+```
+
+Now, remove any default padding from the `dialog` and add it back with `modal__content`.
+
+```css
+:modal {
+    padding: 0;
+}
+
+.modal__content {
+    padding: 1em;
+}
+```
+
+Finally, add the following JavaScript.
+
+```js
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        closeModal.click();
+    }
+});
 ```
 
 ### Lowering Background Image Opacity
@@ -2268,9 +2397,9 @@ We can use the `background-blend-mode` property to lower the opacity of a backgr
 
 ```css
 .element {
-	background-image: url('image.jpg');
-	background-color: #333;
-	background-blend-mode: multiply;
+    background-image: url('image.jpg');
+    background-color: #333;
+    background-blend-mode: multiply;
 }
 ```
 
@@ -2280,7 +2409,7 @@ We can use the `border-radius` property to create pill shapes.
 
 ```css
 .element {
-	border-radius: 100vmax; /* will always get a pill shape */
+    border-radius: 100vmax; /* will always get a pill shape */
 }
 ```
 
@@ -2294,13 +2423,13 @@ There are two ways to do it. The first way is if you also want your content too 
 
 ```css
 html {
-	overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 .child {
-	width: 100vw;
-	margin-inline-start: 50%;
-	transform: translateX(-50%);
+    width: 100vw;
+    margin-inline-start: 50%;
+    transform: translateX(-50%);
 }
 ```
 
@@ -2308,8 +2437,8 @@ This second way is if you only want your background to break out of the containe
 
 ```css
 .child {
-	box-shadow: 0 0 0 100vmax var(--bg-color);
-	clip-path: inset(0 -100vmax);
+    box-shadow: 0 0 0 100vmax var(--bg-color);
+    clip-path: inset(0 -100vmax);
 }
 ```
 
@@ -2319,10 +2448,10 @@ We can use `line-clamp` to clamp text to a certain number of lines.
 
 ```css
 h1 {
-	display: -webkit-box;
-	-webkit-line-clamp: 3; /* number of lines */
-	-webkit-box-orient: vertical;
-	overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 ```
 
@@ -2336,34 +2465,36 @@ Semantically, we want to use the following HTML:
 
 ```html
 <main>
-	<div class="wrapper">
-		<h1>Responsive Tables</h1>
-		<table>
-			<caption>Table Title</caption>
+    <div class="wrapper">
+        <h1>Responsive Tables</h1>
+        <table>
+            <caption>
+                Table Title
+            </caption>
 
-			<thead>
-				<tr>
-					<th>Column 1</th>
-					<th>Column 2</th>
-					<th>Column 3</th>
-				</tr>
-			</thead>
+            <thead>
+                <tr>
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                    <th>Column 3</th>
+                </tr>
+            </thead>
 
-			<tbody>
-				<tr>
-					<td>...</td>
-					<td>...</td>
-					<td>...</td>
-				</tr>
-				<tr>
-					<td>...</td>
-					<td>...</td>
-					<td>...</td>
-				</tr>
-				<!-- Remaining data -->
-			</tbody>
-		</table>
-	</div>
+            <tbody>
+                <tr>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>
+                <!-- Remaining data -->
+            </tbody>
+        </table>
+    </div>
 </main>
 ```
 
@@ -2373,27 +2504,27 @@ From there, we can add very little CSS for just a nicer look.
 
 ```css
 table {
-	background: #323232;
-	border-collapse: collapse;
+    background: #323232;
+    border-collapse: collapse;
 }
 
 th,
 td,
 caption {
-	padding: 1rem;
+    padding: 1rem;
 }
 
 caption,
 th {
-	text-align: left;
+    text-align: left;
 }
 
 th {
-	background-color: hsl(0 0% 0% / 0.5);
+    background-color: hsl(0 0% 0% / 0.5);
 }
 
 tr:nth-of-type(2n) {
-	background-color: hsl(0 0% 0% / 0.1);
+    background-color: hsl(0 0% 0% / 0.1);
 }
 ```
 
@@ -2409,8 +2540,8 @@ Wrap the table in a parent `div` with the class `table-container`. Then, add the
 
 ```css
 .table-container {
-	max-width: 100%;
-	overflow-x: auto;
+    max-width: 100%;
+    overflow-x: auto;
 }
 ```
 
@@ -2420,28 +2551,28 @@ For a much better solution, use the following media query.
 
 ```css
 @media (width <= 650px) {
-	th {
-		display: none;
-	}
+    th {
+        display: none;
+    }
 
-	td {
-		display: block;
-		padding: 0.75rem 1rem;
-	}
+    td {
+        display: block;
+        padding: 0.75rem 1rem;
+    }
 
-	td:first-child {
-		padding-block-start: 2rem;
-	}
+    td:first-child {
+        padding-block-start: 2rem;
+    }
 
-	td:last-child {
-		padding-block-end: 2rem;
-	}
+    td:last-child {
+        padding-block-end: 2rem;
+    }
 
-	td::before {
-		content: attr(data-cell) ': ';
-		font-weight: 700;
-		text-transform: capitalize;
-	}
+    td::before {
+        content: attr(data-cell) ': ';
+        font-weight: 700;
+        text-transform: capitalize;
+    }
 }
 ```
 
@@ -2453,29 +2584,31 @@ While this is great for responsiveness, `display: block` on `td` is not the best
 
 ```html
 <table role="table">
-	<caption>Table Title</caption>
+    <caption>
+        Table Title
+    </caption>
 
-	<thead role="rowgroup">
-		<tr role="row">
-			<th role="columnheader">Column 1</th>
-			<th role="columnheader">Column 2</th>
-			<th role="columnheader">Column 3</th>
-		</tr>
-	</thead>
+    <thead role="rowgroup">
+        <tr role="row">
+            <th role="columnheader">Column 1</th>
+            <th role="columnheader">Column 2</th>
+            <th role="columnheader">Column 3</th>
+        </tr>
+    </thead>
 
-	<tbody role="rowgroup">
-		<tr role="row">
-			<td role="cell" data-cell="column 1">...</td>
-			<td role="cell" data-cell="column 2">...</td>
-			<td role="cell" data-cell="column 3">...</td>
-		</tr>
-		<tr role="row">
-			<td role="cell" data-cell="column 1">...</td>
-			<td role="cell" data-cell="column 2">...</td>
-			<td role="cell" data-cell="column 3">...</td>
-		</tr>
-		<!-- Remaining data -->
-	</tbody>
+    <tbody role="rowgroup">
+        <tr role="row">
+            <td role="cell" data-cell="column 1">...</td>
+            <td role="cell" data-cell="column 2">...</td>
+            <td role="cell" data-cell="column 3">...</td>
+        </tr>
+        <tr role="row">
+            <td role="cell" data-cell="column 1">...</td>
+            <td role="cell" data-cell="column 2">...</td>
+            <td role="cell" data-cell="column 3">...</td>
+        </tr>
+        <!-- Remaining data -->
+    </tbody>
 </table>
 ```
 
@@ -2506,7 +2639,7 @@ Also, make sure you set the following CSS on your text element, since it will li
 
 ```css
 h1 {
-	width: max-content;
+    width: max-content;
 }
 ```
 
@@ -2517,13 +2650,13 @@ From there, we can utilize `::before` and `::after` pseudo elements to hide the 
 ```css
 h1::before,
 h1::after {
-	content: '';
-	position: absolute;
-	inset: 0;
+    content: '';
+    position: absolute;
+    inset: 0;
 }
 
 h1::before {
-	background-color: var(--bg-color);
+    background-color: var(--bg-color);
 }
 ```
 
@@ -2533,9 +2666,9 @@ From there, we can create the `@keyframes` for the animation. Notice that we can
 
 ```css
 @keyframes typewriter {
-	to {
-		left: 100%;
-	}
+    to {
+        left: 100%;
+    }
 }
 ```
 
@@ -2543,8 +2676,8 @@ Now, we just need to apply the animation to the `::before` pseudo element. But b
 
 ```css
 :root {
-	--speed: 4s;
-	--characters: 26;
+    --speed: 4s;
+    --characters: 26;
 }
 ```
 
@@ -2557,9 +2690,9 @@ const root = document.documentElement;
 const heading = document.querySelector('h1');
 
 const setCharacters = () => {
-	const characters = heading.textContent.split('');
+    const characters = heading.textContent.split('');
 
-	root.style.setProperty('--characters', characters.length);
+    root.style.setProperty('--characters', characters.length);
 };
 
 setCharacters();
@@ -2569,8 +2702,8 @@ Now, we can apply the animation to the `::before` pseudo element.
 
 ```css
 h1::before {
-	background-color: var(--bg-color);
-	animation: typewriter var(--speed) steps(var(--characters)) forwards;
+    background-color: var(--bg-color);
+    animation: typewriter var(--speed) steps(var(--characters)) forwards;
 }
 ```
 
@@ -2580,9 +2713,9 @@ This is pretty much it. However, we can go a step further and add a blinking cur
 
 ```css
 h1::after {
-	width: 0.125em;
-	background-color: black;
-	animation: typewriter var(--speed) steps(var(--characters)) forwards;
+    width: 0.125em;
+    background-color: black;
+    animation: typewriter var(--speed) steps(var(--characters)) forwards;
 }
 ```
 
@@ -2592,15 +2725,15 @@ However, we can go even further and add a blinking effect to the cursor. Add the
 
 ```css
 :root {
-	--speed: 4s;
-	--characters: 26;
+    --speed: 4s;
+    --characters: 26;
     --blinkSpeed: 750ms;
 }
 
 @keyframes blink {
-	to {
-		background-color: transparent;
-	}
+    to {
+        background-color: transparent;
+    }
 }
 ```
 
@@ -2610,16 +2743,20 @@ Also, add a small 1s delay to the `::before` and `::after` typewriter animations
 
 ```css
 h1::before {
-	background-color: var(--bg-color);
-	animation: typewriter var(--speed) steps(var(--characters)) 1s forwards;
+    background-color: var(--bg-color);
+    animation: typewriter var(--speed) steps(var(--characters)) 1s forwards;
 }
 
 h1::after {
-	width: 0.125em;
-	background-color: black;
-	animation: typewriter var(--typewriterSpeed)
-			steps(var(--typewriterCharacters)) 1s forwards,
-		blink var(--blinkSpeed) steps(var(--typewriterCharacters)) infinite;
+    width: 0.125em;
+    background-color: black;
+    animation: typewriter var(--typewriterSpeed) steps(
+                var(--typewriterCharacters)
+            )
+            1s forwards, blink var(--blinkSpeed) steps(
+                var(--typewriterCharacters)
+            )
+            infinite;
 }
 ```
 

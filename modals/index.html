@@ -14,9 +14,9 @@
 	</head>
 	<body>
 		<h1>
-			Modals the
-			<em>easy</em>
-			way
+			Animating a
+			<code>dialog</code>
+			element
 		</h1>
 		<p>
 			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit
@@ -45,27 +45,18 @@
 		<button class="button open-button">open modal</button>
 
 		<dialog class="modal" id="modal">
-			<h2>An interesting title</h2>
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-				esse nisi, laboriosam illum temporibus ipsam?
-			</p>
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque,
-				quo.
-			</p>
-			<button class="button close-button">close modal</button>
-			<form class="form" method="dialog">
-				<label>
-					Your name
-					<input type="text" />
-				</label>
-				<label>
-					Your email
-					<input type="email" />
-				</label>
-				<button class="button" type="submit">submit form</button>
-			</form>
+			<div class="modal__content">
+				<h2>An interesting title</h2>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Rerum esse nisi, laboriosam illum temporibus ipsam?
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Atque, quo.
+				</p>
+				<button class="button close-button">close modal</button>
+			</div>
 		</dialog>
 
 		<!-- <form class="form" method="dialog">
