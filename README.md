@@ -612,8 +612,8 @@ Let's pretend we have a grid layout where we have a 3x3 grid of images. We can u
 
 There are more use cases to the `:has()` selector, here are a few:
 
-- Easier Theming
-- Prevent Scrolling When Modal is Open
+-   Easier Theming
+-   Prevent Scrolling When Modal is Open
 
 #### Easier Theming
 
@@ -764,12 +764,12 @@ Absolute units are fixed and do not change based on the viewport or parent eleme
 
 They include the following units:
 
-- `cm` - centimeters
-- `mm` - millimeters
-- `in` - inches
-- `px` - pixels
-- `pt` - points
-- `pc` - picas
+-   `cm` - centimeters
+-   `mm` - millimeters
+-   `in` - inches
+-   `px` - pixels
+-   `pt` - points
+-   `pc` - picas
 
 Typically, the only absolute unit used in CSS is `px`.
 
@@ -779,11 +779,11 @@ Relative units are relative to something else, such as the viewport or parent el
 
 They include the following units:
 
-- `em` - relative to the font size of the element
-- `ex` - relative to the x-height of the current font (**rarely used**)
-- `ch` - relative to the width of the zero character
-- `rem` - relative to the font size of the root element
-- `%` - relative to the parent element
+-   `em` - relative to the font size of the element
+-   `ex` - relative to the x-height of the current font (**rarely used**)
+-   `ch` - relative to the width of the zero character
+-   `rem` - relative to the font size of the root element
+-   `%` - relative to the parent element
 
 Other than `ex`, all of these units are used in CSS and have their own use cases.
 
@@ -793,10 +793,10 @@ Viewport units are a subset of relative units that are relative to the viewport.
 
 They include the following units:
 
-- `vw` - relative to 1% of the viewport's width
-- `vh` - relative to 1% of the viewport's height
-- `vmin` - relative to 1% of the viewport's smaller dimension
-- `vmax` - relative to 1% of the viewport's larger dimension
+-   `vw` - relative to 1% of the viewport's width
+-   `vh` - relative to 1% of the viewport's height
+-   `vmin` - relative to 1% of the viewport's smaller dimension
+-   `vmax` - relative to 1% of the viewport's larger dimension
 
 Typically, `vw` and `vh` are used the most.
 
@@ -817,9 +817,9 @@ The `margin-top` will get collapsed to the parent and cause the parent to shift 
 
 To fix this, we can do one of the following:
 
-- Add `padding` to the parent
-- Use `display: grid` on the parent
-- Use `display: flow-root` on the parent
+-   Add `padding` to the parent
+-   Use `display: grid` on the parent
+-   Use `display: flow-root` on the parent
 
 By adding `padding` to the parent, the child and parent will no longer be touching, so the margin will not collapse. This is the best solution.
 
@@ -872,8 +872,8 @@ So, if you ever need more height, **use `min-height` instead of `height`**.
 
 The main use cases of auto margins are the following:
 
-- Centering elements
-- Spreading navigation links (i.e. in a navbar)
+-   Centering elements
+-   Spreading navigation links (i.e. in a navbar)
 
 #### Centering Elements
 
@@ -973,10 +973,10 @@ Pseudo elements are also inline by default.
 
 Some popular use cases for pseudo elements are the following:
 
-- Adding an Image/Icon
-- Opening or closing quotes
-- Tooltips
-- Counters
+-   Adding an Image/Icon
+-   Opening or closing quotes
+-   Tooltips
+-   Counters
 
 #### Adding an Image/Icon
 
@@ -990,9 +990,9 @@ h1::before {
 
 The following CSS will add:
 
-- a Lightning Bolt before all headings
-- a PDF icon after all links that end in `.pdf`
-- an External Link icon after all links that start with `http`
+-   a Lightning Bolt before all headings
+-   a PDF icon after all links that end in `.pdf`
+-   an External Link icon after all links that start with `http`
 
 Make sure to include Font Awesome in your HTML.
 
@@ -1164,12 +1164,12 @@ The `::marker` pseudo element selects the marker box of a list item.
 
 Its styling is limited to the following properties:
 
-- `color`
-- `all font properties`
-- `white-space`
-- `content`
-- `animation`
-- `transition`
+-   `color`
+-   `all font properties`
+-   `white-space`
+-   `content`
+-   `animation`
+-   `transition`
 
 For modern use, the `::marker` pseudo element allows us to add an icon to a list item.
 
@@ -1240,8 +1240,8 @@ input:not(:placeholder-shown) {
 
 Most elements are block-level elements by default, meaning:
 
-- They have a width of 100%
-- They take up all the available space that they can (within their parent element).
+-   They have a width of 100%
+-   They take up all the available space that they can (within their parent element).
 
 Common block-level elements include `div`, `p`, and `h1`-`h6`.
 
@@ -1259,9 +1259,9 @@ p {
 
 Inline elements are the opposite of block-level elements.
 
-- They have a width of the content inside of them
-- They will not create a new line, and only take up as much space as they need.
-- They will fit wherever they can fit.
+-   They have a width of the content inside of them
+-   They will not create a new line, and only take up as much space as they need.
+-   They will fit wherever they can fit.
 
 Common inline elements include `span`, `a`, and `img`.
 
@@ -1304,9 +1304,9 @@ This will cause the anonymous boxes to match the height or size of the inline el
 
 While difficult to fix, the best solutions are:
 
-- set the `font-size` on the parent element
-- give a `min-height` to the parent element
-- set `line-height: 1` on the inline element.
+-   set the `font-size` on the parent element
+-   give a `min-height` to the parent element
+-   set `line-height: 1` on the inline element.
 
 ### Inline-Block
 
@@ -1495,11 +1495,11 @@ TL;DR: `position: sticky` is like `position: relative` as long as the parent is 
 
 There are 5 main ways to center an element in CSS:
 
-- Tables
-- Absolute Positioning
-- Flexbox
-- Grid
-- Auto Margins
+-   Tables
+-   Absolute Positioning
+-   Flexbox
+-   Grid
+-   Auto Margins
 
 It's important to note that Tables and Margins can only center one element.
 
@@ -1618,6 +1618,7 @@ Similarly, if you have a child you want to center in the parent, you can use aut
 ```
 
 ## CSS Box Shadow
+
 h
 It's important to note that the `box-shadow` property is as the name sounds, it's a shadow on the box, not the content inside the box.
 
@@ -1701,7 +1702,7 @@ The first shadow will be on top, and the last shadow will be on the bottom.
 
 ### Tips for Using Box Shadow
 
-- Use a low opacity for the shadow color to make it look more natural.
+-   Use a low opacity for the shadow color to make it look more natural.
 
 ```css
 .box {
@@ -1709,13 +1710,63 @@ The first shadow will be on top, and the last shadow will be on the bottom.
 }
 ```
 
-- Use a large blur radius if you want to make the element look higher up.
+-   Use a large blur radius if you want to make the element look higher up.
 
 ```css
 .box {
 	box-shadow: 0 5px 60px 0 rgba(0, 0, 0, 0.25);
 }
 ```
+
+Now, what about animating `box-shadow`? Typically, the answer is no because of performance issues.
+
+Consider the following HTML:
+
+```html
+<div class="box">
+	<h1>This is a heading</h1>
+	<p>This is a paragraph</p>
+</div>
+```
+
+The naive approach would animate the `box-shadow` property like so:
+
+```css
+.box {
+	box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.1);
+	transition: transform 1s ease, box-shadow 1s ease;
+}
+
+.box:hover {
+	box-shadow: 0 0.5rem 1rem -0.25em rgba(0, 0, 0, 0.3);
+	transform: translateY(-0.35em) scale(1.02);
+}
+```
+
+The problem with this approach is that the browser has to repaint the entire element every time the shadow changes.
+
+Consider the following approach instead, which uses pseudo-elements and is much more performant:
+
+```css
+.box {
+	position: relative;
+}
+
+.box::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	box-shadow: 0 0.5rem 1rem -0.25em rgba(0, 0, 0, 0.3);
+	opacity: 0;
+	transition: opacity 1s ease;
+}
+
+.box:hover::after {
+	opacity: 1;
+}
+```
+
+Notice how we use the `::after` pseudo-element to bring the finished shadow in ahead of time. We then use `opacity` to hide it until we hover over the element.
 
 ### Box Shadow Hacks
 
@@ -2057,8 +2108,8 @@ By default, this will not be visible. A `dialog` element needs the `open` attrib
 
 There are two functions we can use to open the modal:
 
-- `dialog.show()`
-- `dialog.showModal()`
+-   `dialog.show()`
+-   `dialog.showModal()`
 
 If we use `dialog.show()`, the dialog just shows up like a regular element and the user can still interact with the page.
 
@@ -2338,10 +2389,10 @@ While this is great for responsiveness, `display: block` on `td` is not the best
 
 Notice the following role specifications:
 
-- `role="table"` on the `table` element
-- `role="rowgroup"` on the `thead` and `tbody` elements
-- `role="row"` on the `tr` elements
-- `role="columnheader"` on the `th` elements
-- `role="cell"` on the `td` elements
+-   `role="table"` on the `table` element
+-   `role="rowgroup"` on the `thead` and `tbody` elements
+-   `role="row"` on the `tr` elements
+-   `role="columnheader"` on the `th` elements
+-   `role="cell"` on the `td` elements
 
 We now have a fully accessible table that is responsive.

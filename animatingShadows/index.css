@@ -1,0 +1,91 @@
+:root {
+	--ff-primary: basic-sans, sans-serif;
+	--clr-primary: #ee6352;
+	--clr-body: #333;
+	--clr-bg: #ddd;
+	--spacer: 1rem;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: start;
+	gap: 3em;
+	min-height: 100vh;
+	background: var(--clr-bg);
+	padding: 3em;
+	font-family: var(--ff-primary);
+	font-size: 1.125em;
+	color: var(--clr-body);
+	line-height: 1.6;
+}
+
+.flow > * + * {
+	margin-top: var(--flow-space, var(--spacer));
+}
+
+a {
+	color: var(--clr-primary);
+}
+
+.content {
+	background: white;
+	margin: 3rem auto;
+	padding: 3em;
+	box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.1);
+	transition: transform 1s ease;
+}
+
+.title {
+	font-weight: 900;
+	color: var(--clr-primary);
+	line-height: 0.8;
+}
+
+.shadow-hover {
+	position: relative;
+	top: 0;
+	transition: top 1s ease, box-shadow 1s ease;
+}
+
+.shadow-hover:hover {
+	top: -0.35em;
+	box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+}
+
+.pseudo-hover {
+	position: relative;
+}
+
+.pseudo-hover:hover {
+	transform: translateY(-0.35em) scale(1.02);
+}
+
+.pseudo-hover::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	box-shadow: 0 0.75rem 2rem -0.5em rgba(0, 0, 0, 0.3);
+	opacity: 0;
+	transition: opacity 1s ease;
+}
+
+.pseudo-hover:hover::after {
+	opacity: 1;
+}
+
+.youtube {
+	grid-column: 1 / -1;
+	text-align: center;
+}
