@@ -82,6 +82,9 @@ It's important to note that the concepts covered are somewhat non-trivial. Conce
       - [Multiple Borders](#multiple-borders)
       - [Modal Background Fade](#modal-background-fade)
       - [Peeled Corners](#peeled-corners)
+  - [CSS Background Images](#css-background-images)
+    - [Syntax](#syntax-1)
+    - [Cover](#cover)
   - [CSS Tricks](#css-tricks)
     - [Aspect Ratio](#aspect-ratio)
     - [Clipping an Image to Text](#clipping-an-image-to-text)
@@ -1619,7 +1622,6 @@ Similarly, if you have a child you want to center in the parent, you can use aut
 
 ## CSS Box Shadow
 
-h
 It's important to note that the `box-shadow` property is as the name sounds, it's a shadow on the box, not the content inside the box.
 
 Therefore, if you're trying to add a shadow to a star for example, use `filter: drop-shadow()` instead.
@@ -1849,6 +1851,95 @@ You can use pseudo elements and box-shadows to create peeled corners.
 	transform: rotate(3deg);
 }
 ```
+
+## CSS Background Images
+
+### Syntax
+
+The `background-image` property takes a URL as its value to specify the image to use.
+
+It can also accept multiple URLs separated by commas.
+
+Consider the following HTML and CSS:
+
+```html
+<div class="bg-image"></div>
+```
+
+```css
+.bg-image {
+	background-image: url('//unsplash.it/800');
+}
+```
+
+You'll notice that the image is not visible. This is because the `background-image` property is being set on an empty element that has no content.
+
+So, it either needs content, `width` or `height`, or even `padding` to be visible.
+
+```css
+.bg-image {
+	background-image: url('//unsplash.it/800');
+	padding: 20em;
+}
+```
+
+From there, if the image is too small, it will repeat itself. You can use the `background-repeat` property to control this.
+
+You can also use `background-size` to control the size of the image. It's important to know that the size will be based on the size of the element, not the image itself.
+
+So `background-size: 100%` will make the image the same size as the element horizontally. It won't do it vertically because that's based on how tall the image actually is.
+
+Since it's a shorthand, you can also do `background-size: 100% 50px` to make the image only 50px tall.
+
+```css
+.bg-image {
+	background-image: url('//unsplash.it/800');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	padding: 20em;
+}
+```
+
+`background-position` is the next property you can use to control where the image is positioned.
+
+It takes two values, the first for the horizontal position, and the second for the vertical position.
+
+The values can be in pixels, percentages, or keywords like `top`, `bottom`, `left`, `right`, and `center`.
+
+-   `background-position: center center` will center the image
+-   `background-position: bottom left` will position the image in the bottom left corner
+
+If you're not using `center`, you can also add pixel values for fine tuning.
+
+For example, the following CSS will position the image 10px off the top left corner.
+
+```css
+.bg-image {
+	background-image: url('//unsplash.it/800');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: top 10px left 10px;
+	padding: 20em;
+}
+```
+
+### Cover
+
+The most typical use case for `background-image` is to use it with `background-size: cover`.
+
+This will make the image cover the entire element, and it will maintain its aspect ratio.
+
+```css
+.bg-image {
+	background-image: url('//unsplash.it/800');
+	background-size: cover;
+	padding: 20em;
+}
+```
+
+However, be careful combining `background-size: cover` with `background-position`.
+
+Since `background-size: cover` makes the image cover the entire element, setting `background-position` to `top left` for example, will make the top left of the image the new focal point. So the image will look off center and be cut off.
 
 ## CSS Tricks
 
