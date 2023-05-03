@@ -26,6 +26,10 @@ It's important to note that the concepts covered are somewhat non-trivial. Conce
       - [Easier Theming](#easier-theming)
       - [Prevent Scrolling When Modal is Open](#prevent-scrolling-when-modal-is-open)
     - [Lobotomized Owl Selector](#lobotomized-owl-selector)
+  - [CSS Intrinsic Sizing](#css-intrinsic-sizing)
+    - [`min-content`](#min-content)
+    - [`max-content`](#max-content)
+    - [`fit-content`](#fit-content)
   - [CSS Units](#css-units)
     - [Which Unit to Use?](#which-unit-to-use)
       - [Font Sizes](#font-sizes)
@@ -701,6 +705,34 @@ The following CSS wll add a margin to all children of `.parent` and `.parent__2`
     margin-top: 1.5rem;
 }
 ```
+
+## CSS Intrinsic Sizing
+
+There are three main intrinsic sizing properties in CSS (typically used with `width`):
+
+-   `min-content`
+-   `max-content`
+-   `fit-content`
+
+### `min-content`
+
+`min-content` is the smallest size an element can be while still fitting its content.
+
+It will choose the single word that is the longest and set its `width` to that because that is the minimum size it can be while still fitting its content.
+
+Most importantly, it **will* wrap the text to to the next line (force wrapping).
+
+### `max-content`
+
+`max-content` is the largest size an element can be while still fitting its content.
+
+It's basically taking the longest content and setting the `width` to that, and does **not** allow wrapping.
+
+### `fit-content`
+
+`fit-content` is the size an element will be if it's smaller than `max-content` and larger than `min-content`.
+
+It's basically taking the longest content and setting the `width` to that, and **will** allow wrapping.
 
 ## CSS Units
 
